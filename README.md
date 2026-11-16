@@ -5,7 +5,7 @@
 ## 在线玩
 
 - 游戏入口：https://fornow330.github.io/legendword/
-- 云端备用：https://vcn2hg0t34as.doubao.link/app/app_17j122qqdfb
+- 云端备用：https://fornow.cc
 
 ## 说明
 
