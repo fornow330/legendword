@@ -11,20 +11,13 @@
 
 本仓库（`fornow330/legendword`）只作为项目名与指引入口，**不存放游戏代码**。
 
-游戏源码、加载器与全部压缩分片位于：
+游戏加载器与发布资源位于：
 
 - 仓库：https://github.com/fornow330/fornow330.github.io
-- 目录：`legendword/index.html`（加载器）+ `legendword/c00 ~ c11`（游戏本体，gzip + base64 分片）
+- 目录：`legendword/`（加载器与加密资源）
 
 之所以放在 `.github.io` 仓库：GitHub Pages 用户站点必须由名为 `fornow330.github.io` 的仓库托管，游戏以子目录形式挂在同一站点下，访问路径即项目名。
 
 ## 加载方式
 
-加载器依次取回 c00 → c11 分片，拼接后 gzip 解压，再写入页面；取片按四级回退：
-
-1. `fastly.jsdelivr.net/gh/fornow330/fornow330.github.io@<提交号>`
-2. `ghproxy.net` 镜像
-3. `gh-proxy.com` 镜像
-4. 同目录相对路径（GitHub Pages 原生）
-
-以上来源均按提交号钉版，避免 CDN 缓存与新旧分片错配。
+加载器按顺序取回加密资源，校验通过后写入页面；取源按四级回退：jsDelivr → 社区镜像 → 同站相对路径。所有来源按提交号钉版，避免 CDN 缓存导致新旧资源错配。
